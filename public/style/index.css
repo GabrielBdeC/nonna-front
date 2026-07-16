@@ -1,0 +1,27 @@
+h1 {
+    color: #8B3A3A;
+    font-family: Georgia, serif;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #3B2B20;
+}
+
+footer {
+  background-color: #8B3A3A;
+  color: #FFF8E7;
+  font-family: Georgia, serif;
+  font-size: 14px;
+  text-align: center;
+
+  width: 100%;
+}
+
+.endereco {
+  bottom: 45px;
+  left: 0;
+  width: 100%;
+  background-color: #FDEBD3;
+  text-align: center;
+}
