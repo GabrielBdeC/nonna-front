@@ -1,0 +1,31 @@
+body {
+    background-color: grey;
+}
+
+.container {
+    background-color: blueviolet;
+
+    display: flex;
+    gap: 4px;
+
+    flex-wrap: wrap; /* Remove a responsividade do eixo x (e salta linha) */
+
+    justify-content: center; /* Alinhamento no eixo x */
+    align-items: flex-end; /* Alinhamento no eixo y */
+
+    height: 350px;
+}
+
+.item {
+    background-color: aquamarine;
+    height: 100px;
+    width: 350px;
+}
+
+#item_1 {
+    order: 5
+}
+
+#item_3 {
+    order: -1
+}

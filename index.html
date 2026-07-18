@@ -12,13 +12,19 @@
     </head>
     <body>
         <nav>
-            <a href="index.html">Início</a>
-            <a href="cardapio.html">Cardápio</a>
-            <a href="reserva.html">Reserva</a>
-            <a href="cadastro-produtos.html">Cadastro de produtos</a>
+            <a href="index.html">Cantina da Nonna</a>
+            
+            <div class="links-nav">
+                <a href="index.html">Início</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="cadastro-produtos.html">Cadastro de produtos</a>
+            </div>
         </nav>
         <h1>Cantina da Nonna</h1>
-        <img src="public/images/logo.jpeg" alt="Logo da Cantina da Nonna" width="450">
+        <div class="logo-container">
+            <img src="public/images/logo.jpeg" alt="Logo da Cantina da Nonna" width="450">
+        </div>
         <p>Massas e pizzas artesanais, feitas na hora.</p>
         <hr> <!-- Exceção: hr não tem fechamento -->
         <h2>Sobre a casa</h2>
@@ -34,17 +40,22 @@
             <li>Forno a lenha para as pizzas</li>
             <li>Receitas de família</li>
         </ul>
-        <h2>Como chegar</h2>
-        <ol>
-            <li>Siga pela Rua das Oliveiras</li>
-            <li>Vire no número 120</li>
-            <li>Pronto, chegou!</li>
-        </ol>
-        <div class="endereco"></div>
-            <p>Rua das Oliveiras, 120<br>Centro - Araranguá</p> <!-- Exceção: br não tem fechamento -->
-        </div>
-
         <footer>
+            <div>
+                <section>
+                    <h2>Contato</h2>
+                    <p>Telefone: <a href="https://wa.me/5548987654321" target="_blank">(48) 9 8765 - 4321</a></p>
+                    <p>email: <a href="mailto:contato@nonna.com.br">contato@nonna.com.br</a></p>
+                    <p>Instragram: <a href="https://instagram.com.br/nonna">@nonna</a></p>
+                </section>
+                <section>
+                    <h2>Localização</h2>
+                    <p>Rua das Oliveiras, 120</p>
+                    <p>Centro - Araranguá/SC</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13966.543414224649!2d-49.49170902969789!3d-28.938859202589764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95222edfcf15aaad%3A0xff24219d9974bb61!2sSenac%20Ararangu%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1784248086985!5m2!1spt-BR!2sbr" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>    
+                </section>
+            </div>
+
             <p>&copy; 2026 Cantina da Nonna.</p>
         </footer>
     </body>
