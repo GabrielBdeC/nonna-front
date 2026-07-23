@@ -8,6 +8,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Cantina da Nonna</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
         <link rel="stylesheet" href="public/style/index.css">
     </head>
     <body>
@@ -21,45 +22,78 @@
                 <a href="cadastro-produtos.html">Cadastro de produtos</a>
             </div>
         </nav>
-        <h1>Cardápio</h1>
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagem</th>
-                    <th>Prato</th>
-                    <th>Preço</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><img src="public/images/massa.jpg" alt="Fettuccine ao molho branco" width="150"></td>
-                    <td>Fettuccine ao molho branco</td>
-                    <td>R$ 42,00</td>
-                </tr>
-                <tr>
-                    <td><img src="public/images/pizza.avif" alt="Pizza margherita" width="150"></td>
-                    <td>Pizza margherita</td>
-                    <td>R$ 55,00</td>
-                </tr>
-                <tr>
-                    <td><img src="public/images/polenta.jpg" alt="Polenta com fortaia" width="150"></td>
-                    <td>Polenta com fortaia</td>
-                    <td>R$ 35,00</td>
-                </tr>
-                <tr>
-                    <td><img src="public/images/salame.jpeg" alt="Salame e queijo colonial" width="150"></td>
-                    <td>Salame e queijo colonial</td>
-                    <td>R$ 38,00</td>
-                </tr>
-                <tr>
-                    <td><img src="public/images/vinho.webp" alt="Taça de vinho Goethe" width="150"></td>
-                    <td>Vinho Goethe (taça)</td>
-                    <td>R$ 25,00</td>
-                </tr>
-            </tbody>
-        </table>
+
+        <main class="container mt-4">
+            <h1>Cardápio</h1>
+
+            <div class="row">
+
+                <div class="col-md-3 col-md-6 col-sm-12 mb-4 h-100">
+                    <div class="border rounded p-3 h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start gap-3">
+                            <div>
+                                <h5>Fettucine ao molho branco</h5>
+                                <p class="text-muted small">Massa fresca ao molho de creme de leite com parmesão ralado na hora e toque de noz-moscada.</p>
+                            </div>
+                            <img src="public/images/massa.jpg" alt="Fettucine ao molho branco" class="cardapio-img rounded">
+                        </div>
+                        <p class="mt-auto mb-0 pt-3">R$ 42,00</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-md-6 col-sm-12 mb-4 h-100">
+                    <div class="border rounded p-3 h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start gap-3">
+                            <div>
+                                <h5>Pizza margherita</h5>
+                                <p class="text-muted small">Pizza no forno a lenha com molho de tomate artesanal, mussarela fresca e folhas de manjericão</p>
+                            </div>
+                            <img src="public/images/pizza.avif" alt="Pizza margherita" class="cardapio-img rounded">
+                        </div>
+                        <p class="mt-auto mb-0 pt-3">R$ 55,00</p>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-md-6 col-sm-12 mb-4 h-100">
+                    <div class="border rounded p-3 h-100 d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-start gap-3">
+                            <div>
+                                <h5>Polenta com fortaia</h5>
+                                <p class="text-muted small">Polenta cremosa servida com fortaia - omelete de ovos caipiras - prato típico da cozinha ítalo-catarinense.</p>
+                            </div>
+                            <img src="public/images/polenta.jpg" alt="Fettucine ao molho branco" class="cardapio-img rounded">
+                        </div>
+                        <p class="mt-auto mb-0 pt-3">R$ 42,00</p>
+                    </div>
+                </div>
+
+            </div>
+            
+
+
+        </main>
+
+        <a class="botao-reserva" href="reserva.html">Reservar mesa</a>
+
         <footer>
+            <div>
+                <section>
+                    <h2>Contato</h2>
+                    <p>Telefone: <a href="https://wa.me/5548987654321" target="_blank">(48) 9 8765 - 4321</a></p>
+                    <p>email: <a href="mailto:contato@nonna.com.br">contato@nonna.com.br</a></p>
+                    <p>Instragram: <a href="https://instagram.com.br/nonna">@nonna</a></p>
+                </section>
+                <section>
+                    <h2>Localização</h2>
+                    <p>Rua das Oliveiras, 120</p>
+                    <p>Centro - Araranguá/SC</p>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13966.543414224649!2d-49.49170902969789!3d-28.938859202589764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95222edfcf15aaad%3A0xff24219d9974bb61!2sSenac%20Ararangu%C3%A1!5e0!3m2!1spt-BR!2sbr!4v1784248086985!5m2!1spt-BR!2sbr" width="600" height="350" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>    
+                </section>
+            </div>
+
             <p>&copy; 2026 Cantina da Nonna.</p>
         </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     </body>
 </html>
