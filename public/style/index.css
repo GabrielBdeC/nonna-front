@@ -115,3 +115,44 @@ textarea:focus {
   object-fit: cover;
   flex-shrink: 0;
 }
+
+/* Categorias (filtro do cardápio e admin) */
+.categoria-filtro.active,
+.categoria-filtro:hover {
+  background-color: #8B3A3A;
+  color: #FFF8E7;
+  border-color: #8B3A3A;
+}
+
+.badge-tipo {
+  background-color: #8B3A3A;
+  color: #FFF8E7;
+}
+
+/* Botões no padrão da casa, para usar fora do link flutuante de reserva */
+.btn-nonna {
+  color: #FFF8E7;
+  background-color: #8B3A3A;
+  border: 1px solid #3B2B20;
+}
+
+.btn-nonna:hover {
+  background-color: #6F2E2E;
+  color: #FFF8E7;
+}
+
+/* Cabeçalho de modal no padrão da casa */
+.modal-header.bg-nonna {
+  background-color: #8B3A3A;
+  color: #FFF8E7;
+}
+
+/* Tabelas administrativas */
+.table-nonna thead {
+  background-color: #8B3A3A;
+  color: #FFF8E7;
+}
+
+.pagina-admin h1 {
+  margin-top: 24px;
+}

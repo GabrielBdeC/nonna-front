@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cantina da Nonna</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/style/index.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Cantina da Nonna</a>
+            <div class="links-nav">
+                <a href="index.html">Início</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="usuarios.html">Usuários</a>
+            </div>
+        </nav>
+
+        <main class="container mt-4 pagina-admin">
+            <h1>Administração do cardápio</h1>
+            <p class="text-muted">Área de administrador. Ainda sem login, então qualquer pessoa acessa por enquanto.</p>
+
+            <div id="alert-container"></div>
+
+            <section class="mb-5">
+                <h2>Categorias</h2>
+                <div class="d-flex flex-wrap gap-2 mb-3" id="categorias-list">
+                    <!-- Preenchido via JS -->
+                </div>
+                <form id="categoriaForm" class="d-flex gap-2">
+                    <input type="text" class="form-control" id="categoria-nome" placeholder="Nova categoria" required style="max-width: 300px">
+                    <button type="submit" class="btn btn-nonna">Adicionar categoria</button>
+                </form>
+            </section>
+
+            <section>
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h2 class="mb-0">Produtos</h2>
+                    <button type="button" class="btn btn-nonna" id="btnNovoProduto">Novo produto</button>
+                </div>
+                <div class="row" id="produtos-grid">
+                    <div class="col-12 text-center py-4">
+                        <div class="spinner-border" role="status"></div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Modal de produto -->
+        <div class="modal fade" id="produtoModal" tabindex="-1" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header bg-nonna">
+                        <h5 class="modal-title" id="produtoModalTitulo">Novo produto</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="produtoForm">
+                            <input type="hidden" id="produto-id">
+                            <div class="mb-3">
+                                <label for="produto-nome" class="form-label">Nome</label>
+                                <input type="text" class="form-control" id="produto-nome" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="produto-descricao" class="form-label">Descrição</label>
+                                <textarea class="form-control" id="produto-descricao" rows="2"></textarea>
+                            </div>
+                            <div class="mb-3">
+                                <label for="produto-preco" class="form-label">Preço (R$)</label>
+                                <input type="number" step="0.01" min="0" class="form-control" id="produto-preco" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="produto-categoria" class="form-label">Categoria</label>
+                                <select class="form-select" id="produto-categoria" required>
+                                    <option value="">Selecione</option>
+                                </select>
+                            </div>
+                            <div class="mb-3">
+                                <label for="produto-imagem" class="form-label">Imagem (URL ou caminho)</label>
+                                <input type="text" class="form-control" id="produto-imagem" placeholder="public/images/massa.jpg">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button type="button" class="btn btn-nonna" id="btnSalvarProduto">Salvar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div>
+                <section>
+                    <h2>Contato</h2>
+                    <p>Telefone: <a href="https://wa.me/5548987654321" target="_blank">(48) 9 8765 - 4321</a></p>
+                    <p>email: <a href="mailto:contato@nonna.com.br">contato@nonna.com.br</a></p>
+                    <p>Instragram: <a href="https://instagram.com.br/nonna">@nonna</a></p>
+                </section>
+                <section>
+                    <h2>Localização</h2>
+                    <p>Rua das Oliveiras, 120</p>
+                    <p>Centro - Araranguá/SC</p>
+                </section>
+            </div>
+            <p>&copy; 2026 Cantina da Nonna.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="public/scripts/api.js"></script>
+        <script src="public/scripts/ui.js"></script>
+        <script src="public/scripts/produtos.js"></script>
+    </body>
+</html>
