@@ -1,11 +1,14 @@
 /**
  * produtos.js
- * Administração de categorias e produtos (sem autenticação por enquanto).
+ * Administração de categorias e produtos. Só administrador acessa --
+ * o back também recusa (403), isso aqui só evita carregar a tela à toa.
  */
 
 let categoriasCache = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
+    exigirAdministrador();
+
     // Espera as categorias chegarem antes de carregar os produtos: o card
     // de produto mostra o nome da categoria, e precisa do cache pronto.
     await carregarCategorias();

@@ -25,7 +25,7 @@
                 <h1>Usuários</h1>
                 <button type="button" class="btn btn-nonna" id="btnNovoUsuario">Novo usuário</button>
             </div>
-            <p class="text-muted">Clientes e administradores. Sem login ainda, então a senha aqui é só texto por enquanto.</p>
+            <p class="text-muted">Clientes e administradores. A senha é guardada com hash (BCrypt), nunca em texto puro.</p>
 
             <div id="alert-container"></div>
 
@@ -65,11 +65,15 @@
                                 <label for="usuario-email" class="form-label">E-mail</label>
                                 <input type="email" class="form-control" id="usuario-email" required>
                             </div>
-                            <div class="mb-3">
+                            <div class="mb-3" id="usuario-senha-container">
                                 <label for="usuario-senha" class="form-label">Senha</label>
-                                <input type="text" class="form-control" id="usuario-senha" required>
-                                <div class="form-text">Ainda em texto puro — na próxima aula isso vira hash.</div>
+                                <input type="password" class="form-control" id="usuario-senha">
+                                <div class="form-text">Guardada só como hash (BCrypt), nunca em texto puro.</div>
                             </div>
+                            <p class="text-muted small" id="usuario-senha-aviso" hidden>
+                                A senha só pode ser trocada pelo próprio dono da conta -- o administrador
+                                não altera a senha de outra pessoa por aqui.
+                            </p>
                             <div class="mb-3">
                                 <label for="usuario-telefone" class="form-label">Telefone</label>
                                 <input type="tel" class="form-control" id="usuario-telefone">
@@ -96,6 +100,7 @@
         </footer>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="public/scripts/sessao.js"></script>
         <script src="public/scripts/api.js"></script>
         <script src="public/scripts/ui.js"></script>
         <script src="public/scripts/usuarios.js"></script>

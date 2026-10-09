@@ -102,6 +102,16 @@ function filtrarPorCategoria(idCategoria, botaoClicado) {
 }
 
 function abrirModalPedido(idProduto) {
+    if (!estaLogado()) {
+        mostrarAlerta('Você precisa entrar na sua conta para fazer um pedido.', 'warning');
+        setTimeout(() => { window.location.href = 'login.html'; }, 1500);
+        return;
+    }
+    if (ehAdministrador()) {
+        mostrarAlerta('Contas de administrador não fazem pedido -- entre com uma conta de cliente.', 'warning');
+        return;
+    }
+
     const produto = produtosCarregados.find((item) => item.id === idProduto);
     if (!produto) return;
 
@@ -122,7 +132,8 @@ async function confirmarPedido() {
     }
 
     const pedido = {
-        idUsuario: document.getElementById('pedido-id-usuario').value,
+        // idUsuario nao vai mais aqui: o back le o usuario a partir do
+        // token JWT que o api.js ja manda em todo request autenticado.
         tipoEntrega: document.getElementById('pedido-tipo-entrega').value,
         endereco: document.getElementById('pedido-endereco').value || null,
         formaPagamento: document.getElementById('pedido-forma-pagamento').value,

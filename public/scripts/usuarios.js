@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    exigirAdministrador();
+
     carregarUsuarios();
     document.getElementById('btnNovoUsuario').addEventListener('click', abrirModalNovoUsuario);
     document.getElementById('btnSalvarUsuario').addEventListener('click', salvarUsuario);
@@ -45,6 +47,8 @@ function renderizarUsuarios(usuarios) {
 function abrirModalNovoUsuario() {
     document.getElementById('usuarioForm').reset();
     document.getElementById('usuario-id').value = '';
+    document.getElementById('usuario-senha-container').hidden = false;
+    document.getElementById('usuario-senha-aviso').hidden = true;
     document.getElementById('usuarioModalTitulo').textContent = 'Novo usuário';
     new bootstrap.Modal(document.getElementById('usuarioModal')).show();
 }
@@ -56,6 +60,13 @@ function abrirModalEditarUsuario(usuario) {
     document.getElementById('usuario-senha').value = '';
     document.getElementById('usuario-telefone').value = usuario.telefone || '';
     document.getElementById('usuario-tipo').value = usuario.tipo;
+
+    // Admin editando outro usuario nunca troca a senha dele -- o back
+    // ignora esse campo de qualquer jeito, entao nem mostra o input.
+    const ehProprioUsuario = obterUsuarioLogado()?.id === usuario.id;
+    document.getElementById('usuario-senha-container').hidden = !ehProprioUsuario;
+    document.getElementById('usuario-senha-aviso').hidden = ehProprioUsuario;
+
     document.getElementById('usuarioModalTitulo').textContent = 'Editar usuário';
     new bootstrap.Modal(document.getElementById('usuarioModal')).show();
 }
@@ -68,10 +79,17 @@ async function salvarUsuario() {
     }
 
     const id = document.getElementById('usuario-id').value;
+    const senha = document.getElementById('usuario-senha').value;
+
+    if (!id && !senha) {
+        mostrarAlerta('Defina uma senha para o novo usuário.', 'danger');
+        return;
+    }
+
     const usuario = {
         nome: document.getElementById('usuario-nome').value,
         email: document.getElementById('usuario-email').value,
-        senha: document.getElementById('usuario-senha').value,
+        senha: senha || null,
         telefone: document.getElementById('usuario-telefone').value || null,
         tipo: document.getElementById('usuario-tipo').value
     };

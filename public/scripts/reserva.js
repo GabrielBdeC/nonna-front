@@ -13,6 +13,11 @@ document.addEventListener('DOMContentLoaded', () => {
 async function enviarReserva(evento) {
     evento.preventDefault();
 
+    if (ehAdministrador()) {
+        mostrarAlerta('Contas de administrador não fazem reserva -- entre com uma conta de cliente, ou sem estar logado.', 'warning');
+        return;
+    }
+
     const form = evento.target;
     if (!form.checkValidity()) {
         form.reportValidity();

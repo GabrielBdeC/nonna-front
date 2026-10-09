@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Cantina da Nonna</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+        <link rel="stylesheet" href="public/style/index.css">
+    </head>
+    <body>
+        <nav>
+            <a href="index.html">Cantina da Nonna</a>
+            <div class="links-nav">
+                <a href="index.html">Início</a>
+                <a href="cardapio.html">Cardápio</a>
+                <a href="reserva.html">Reserva</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="pedidos.html">Pedidos</a>
+                <a href="usuarios.html">Usuários</a>
+            </div>
+        </nav>
+
+        <main class="container mt-4" style="max-width: 420px;">
+            <h1>Criar conta</h1>
+            <p class="text-muted">Cadastro de cliente. Com essa conta você poderá fazer pedidos pelo cardápio.</p>
+
+            <div id="alert-container"></div>
+
+            <form id="registroForm">
+                <div class="mb-3">
+                    <label for="nome" class="form-label">Nome</label>
+                    <input type="text" class="form-control" id="nome" required>
+                </div>
+                <div class="mb-3">
+                    <label for="email" class="form-label">E-mail</label>
+                    <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                    <label for="senha" class="form-label">Senha</label>
+                    <input type="password" class="form-control" id="senha" required minlength="6">
+                </div>
+                <div class="mb-3">
+                    <label for="telefone" class="form-label">Telefone</label>
+                    <input type="tel" class="form-control" id="telefone">
+                </div>
+                <button type="submit" class="btn btn-nonna w-100">Criar conta</button>
+            </form>
+
+            <p class="text-center mt-3">
+                Já tem conta? <a href="login.html">Entrar</a>
+            </p>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 Cantina da Nonna.</p>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+        <script src="public/scripts/sessao.js"></script>
+        <script src="public/scripts/api.js"></script>
+        <script src="public/scripts/ui.js"></script>
+        <script src="public/scripts/registro.js"></script>
+    </body>
+</html>
