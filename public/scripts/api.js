@@ -31,6 +31,10 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
 }
 
 window.api = {
+    // Autenticação
+    login: (email, senha) => fetchAPI('/auth/login', 'POST', { email, senha }),
+    me: () => fetchAPI('/me'),
+
     // Categorias
     getCategorias: (page = 0, size = 100) => fetchAPI(`/categorias?page=${page}&size=${size}`),
     criarCategoria: (categoria) => fetchAPI('/categorias', 'POST', categoria),
