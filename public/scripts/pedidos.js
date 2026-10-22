@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    exigirAdministrador();
+
     carregarPedidos();
     document.getElementById('btnAtualizarPedido').addEventListener('click', atualizarStatus);
     document.getElementById('btnCancelarPedido').addEventListener('click', cancelarPedido);

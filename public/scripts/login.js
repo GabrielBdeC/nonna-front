@@ -15,7 +15,7 @@ async function fazerLogin(evento) {
 
     try {
         const resposta = await window.api.login(email, senha);
-        // salvarSessao(resposta);
+        salvarSessao(resposta);
         window.location.href = 'index.html';
     } catch (erro) {
         mostrarAlerta(erro.message, 'danger');

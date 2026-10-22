@@ -9,9 +9,14 @@
 const API_BASE_URL = 'http://localhost:8080';
 
 async function fetchAPI(endpoint, method = 'GET', body = null) {
+    const sessao = obterSessao();
+    
     const config = {
         method,
-        headers: { 'Content-Type': 'application/json' }
+        headers: {
+            'Content-Type': 'application/json',
+            ...(sessao ? { Authorization: `Bearer ${sessao.token}` } : {})
+        },
     };
     if (body !== null) config.body = JSON.stringify(body);
 
@@ -22,6 +27,9 @@ async function fetchAPI(endpoint, method = 'GET', body = null) {
     const data = await response.json();
 
     if (!response.ok) {
+        if (response.status === 401 && sessao) {
+            limparSessao();
+        }
         // O back devolve { status, erros: [...], horario }
         const mensagem = Array.isArray(data.erros) ? data.erros.join(', ') : 'Erro inesperado';
         throw new Error(mensagem);

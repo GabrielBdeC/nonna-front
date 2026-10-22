@@ -6,6 +6,8 @@
 let categoriasCache = [];
 
 document.addEventListener('DOMContentLoaded', async () => {
+    exigirAdministrador();
+
     // Espera as categorias chegarem antes de carregar os produtos: o card
     // de produto mostra o nome da categoria, e precisa do cache pronto.
     await carregarCategorias();

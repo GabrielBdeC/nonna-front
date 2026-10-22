@@ -4,6 +4,8 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    exigirAdministrador();
+
     carregarUsuarios();
     document.getElementById('btnNovoUsuario').addEventListener('click', abrirModalNovoUsuario);
     document.getElementById('btnSalvarUsuario').addEventListener('click', salvarUsuario);
