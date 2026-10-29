@@ -6,6 +6,7 @@
  * sempre da mesma forma, em qualquer tela.
  */
 
+// No deploy, o GitHub Actions troca este endereço pela variável API_URL do repositório.
 const API_BASE_URL = 'http://localhost:8080';
 
 async function fetchAPI(endpoint, method = 'GET', body = null) {
